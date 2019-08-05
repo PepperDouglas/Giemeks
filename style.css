@@ -1,0 +1,102 @@
+html {
+    min-width: 1080px;
+}
+
+.board {
+    background-color: aquamarine;
+    width: 600px;
+    height: 600px;
+    float: left;
+}
+
+.board_row {
+    background-color: green;
+    width: 580px;
+    height: 100px;
+    margin-top: 4px;
+    overflow: hidden;
+}
+
+.board_slot {
+    background-color: antiquewhite;
+    border: 1px black;
+    width: 90px;
+    height: 90px;
+    float: left;
+    margin-left: 3px;
+}
+
+.control {
+    background-color: blanchedalmond;
+    width: 450px;
+    height: 600px;
+    float: right;
+}
+
+.extract {
+    background-color: blueviolet;
+}
+
+.insert {
+    background-color: blueviolet;
+}
+
+.input_field {
+    border: 3px dotted black;
+    float: right;
+    margin-top: 1%;
+    width: -webkit-fill-available;
+}
+
+.output_field {
+    border: 2px dotted rgb(68, 12, 12);
+    float: right;
+    width: 80%;
+    height: 85%;
+}
+
+.sym_control {
+    background-color: aqua;
+    height: 250px;
+}
+
+.control_buttons {
+    background-color: grey;
+    float: left;
+    width: 15px;
+}
+
+.symbol_menu {
+    background-color: yellow;
+    height: 250px;
+}
+
+.ava_btn_container {
+    background-color: red;
+}
+
+.symbol_slot {
+    background-color: rgb(31, 189, 91);
+    width: 50px;
+    height: 50px;
+}
+
+.queue_field {
+    background-color: yellowgreen;
+    width: 1000px;
+    height: 80px;
+    float: left;
+}
+
+#avalanche_button {
+    background-color: blue;
+}
+
+#s00 #s01 #s02 #s03 #s09 #s10 #s11 #s16 #s17 #s21 {
+    border-right: 2px black;
+    border-left: 2px black;
+}
+
+#s4 {
+
+}
