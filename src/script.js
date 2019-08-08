@@ -1,18 +1,33 @@
 let currentSymbolChoice = '';
 
-let firstSymbol = document.getElementsByClassName('symbol_slot')[0];
-let boardArray = document.getElementById('s04');
+let avaBtn = document.getElementById('avalanche_button');
 
-console.log(firstSymbol.innerText);
+let symbolMenu = document.getElementsByClassName('symbol_menu')[0].children;
 
-firstSymbol.addEventListener('click', function(t){
-    currentSymbolChoice = t.target.innerText;
-    console.log(currentSymbolChoice);
-    console.log('IM CLICKED');
-});
+let boardArray = document.getElementsByClassName('board_row');
 
-boardArray.addEventListener('click', function(){
-    this.innerText = currentSymbolChoice;
-})
+console.log(symbolMenu.innerText);
+
+for(let i = 0; i < symbolMenu.length; i++){
+    symbolMenu[i].addEventListener('click', function(t){
+            currentSymbolChoice = t.target.innerText;
+            console.log(currentSymbolChoice);
+            console.log('IM CLICKED');
+    });
+
+}
+for(let i = 0; i < boardArray.length; i++){
+    console.log('board rows');
+    let aRow = boardArray[i];
+    for (let j = 0; j < boardArray.length; j++){
+        console.log('a slot');
+        aRow.children[j].addEventListener('click', function(){
+            this.innerText = currentSymbolChoice;
+        })
+    }
+}
+
+
+
 
 

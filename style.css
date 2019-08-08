@@ -69,6 +69,7 @@ html {
 .symbol_menu {
     background-color: yellow;
     height: 250px;
+    overflow: hidden;
 }
 
 .ava_btn_container {
@@ -79,6 +80,8 @@ html {
     background-color: rgb(31, 189, 91);
     width: 50px;
     height: 50px;
+    float: left;
+    margin-right: 2px;
 }
 
 .queue_field {
