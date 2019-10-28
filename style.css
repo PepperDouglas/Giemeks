@@ -49,6 +49,7 @@ html {
 }
 
 .output_field {
+    overflow: auto;
     border: 2px dotted rgb(68, 12, 12);
     float: right;
     width: 80%;
