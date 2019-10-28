@@ -7,34 +7,32 @@ let symbolMenu = document.getElementsByClassName('symbol_menu')[0].children;
 let boardArray = document.getElementsByClassName('board_row');
 let outField = document.getElementsByClassName('output_field');
 
-
-console.log(symbolMenu.innerText);
 avaBtn.addEventListener('click', fall);
 exdropButton.addEventListener('click', exportDrop);
 insertButton.addEventListener('click', insert);
+extrButton.addEventListener('click', exportPosition);
 
+let afterAva = 0;
+const displayArr = [];
 
+//listens for symbol selection
 for(let i = 0; i < symbolMenu.length; i++){
     symbolMenu[i].addEventListener('click', function(t){
             currentSymbolChoice = t.target.innerText;
-            console.log(currentSymbolChoice);
-            console.log('IM CLICKED');
     });
-
 }
 
+//puts selected symbol
 for(let i = 0; i < boardArray.length; i++){
-    console.log('board rows');
     let aRow = boardArray[i];
     for (let j = 0; j < boardArray.length; j++){
-        console.log('a slot');
         aRow.children[j].addEventListener('click', function(){
             this.innerText = currentSymbolChoice;
         })
     }
 }
 
-//Id getter
+//Id getter from html
 function intToStringId(num){
     if (num < 10){
         return 's0' + num;
@@ -42,17 +40,20 @@ function intToStringId(num){
     return 's' + num;
 }
 
-let  afterAva = 0;
+//get all elements in the board array
+function selectAndSet(count){
+    const stringId = intToStringId(count);
+    const selectedElement = document.getElementById(stringId);
+    return selectedElement.innerText;
+}
+
 //Avalanche the array
 function fall(){
     let exArr = [];
     let newArr = [];
     let diff = 0;
     for (let i = 0; i <= 24; i++){
-        const stringId = intToStringId(i);
-        const selectedElement = document.getElementById(stringId);
-        const positionSym = selectedElement.innerText;
-        exArr.push(positionSym);
+        exArr.push(selectAndSet(i));
     }
     newArr = exArr.filter(e => e !== 'NONE');
     diff = 25 - newArr.length;
@@ -81,34 +82,26 @@ function stringFromArr(arr){
     return jmxCode;
 }
 
-const displayArr = [];
-//function Export DROP
+
+//exports only the drop after avalanche
 function exportDrop(){
     let extractedArr = [];
     for (let i = 0; i <= afterAva; i++){
-        const stringId = intToStringId(i);
-        const selectedElement = document.getElementById(stringId);
-        const positionSym = selectedElement.innerText;
-        extractedArr.push(positionSym);
+        extractedArr.push(selectAndSet(i));
     }
     outField[0].innerText += stringFromArr(extractedArr);
 }
 
-//function Export Position
-extrButton.addEventListener('click', exportPosition);
-
+//puts out whole board as a jiemeks string
 function exportPosition(){
     let extractedArr = [];
     for (let i = 0; i <= 24; i++){
-        const stringId = intToStringId(i);
-        const selectedElement = document.getElementById(stringId);
-        const positionSym = selectedElement.innerText;
-        extractedArr.push(positionSym);
+        extractedArr.push(selectAndSet(i));
     }
     outField[0].innerText += stringFromArr(extractedArr);
 }
 
-//showcase according to JMX string
+//showcase on board according to jiemeks string
 function insert(){
     const insText = document.getElementById('insertText').value;
     let insArr = arrFromString(insText);
