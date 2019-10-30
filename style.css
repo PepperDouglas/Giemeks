@@ -67,6 +67,12 @@ html {
     width: 15px;
 }
 
+.control_buttons button {
+    width: 80px;
+    height: 40px;
+    margin-bottom: 8px;
+}
+
 .symbol_menu {
     background-color: yellow;
     height: 250px;
@@ -79,21 +85,24 @@ html {
 
 .symbol_slot {
     background-color: rgb(31, 189, 91);
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     float: left;
-    margin-right: 2px;
+    margin-right: 3px;
+    margin-top: 3px;
 }
 
 .queue_field {
     background-color: yellowgreen;
-    width: 1000px;
-    height: 80px;
+    width: 100%;
+    height: 32px;
     float: left;
 }
 
 #avalanche_button {
     background-color: blue;
+    width: 50px;
+    height: 50px;
 }
 
 #s00 #s01 #s02 #s03 #s09 #s10 #s11 #s16 #s17 #s21 {
@@ -101,6 +110,6 @@ html {
     border-left: 2px black;
 }
 
-#s4 {
-
+#insert-text {
+    width: inherit;
 }
